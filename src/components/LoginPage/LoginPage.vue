@@ -42,7 +42,7 @@ export default {
         let token = res.data.data.Authorization
         console.log(token)
         window.localStorage.setItem('accessToken', token)
-        this.$router.push('hello')
+        this.$router.push('main')
       }).catch(e => {
         this.username = ''
         this.password = ''
