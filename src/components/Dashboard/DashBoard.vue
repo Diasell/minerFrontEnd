@@ -1,10 +1,18 @@
 <template>
-  <h1>Make your fucking app</h1>
+  <div id="dashboard-wrapper">
+    <dashboard-header></dashboard-header>
+    <div id="dashboard-sidebar">SIDEBAR COMPONENT</div>
+    <div id="dashboard-content">CONTENT COMPONENT</div>
+  </div>
 </template>
 
 <script>
+import Header from './Header.vue'
 export default {
   name: 'DashBoard',
+  components: {
+    'dashboard-header': Header
+  },
   data () {
     return {
       'isLogged': false
