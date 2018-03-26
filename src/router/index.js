@@ -1,11 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import DashBoard from '@/components/Dashboard/DashBoard'
 import LoginPage from '@/components/LoginPage/LoginPage'
+import NotFound from '@/components/Errors/NotFound/NotFound'
 
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -13,9 +15,14 @@ export default new Router({
       component: LoginPage
     },
     {
-      path: '/hello',
-      name: 'Hello',
-      component: HelloWorld
+      path: '/main',
+      name: 'Main',
+      component: DashBoard
+    },
+    {
+      path: '*',
+      name: 'NotFound',
+      component: NotFound
     }
   ]
 })
