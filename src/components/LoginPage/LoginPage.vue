@@ -22,7 +22,7 @@
 </template>
 
 <script>
-let axios = require('axios')
+import BACKEND from '../../http-common'
 export default {
   name: 'LoginPage',
   data () {
@@ -35,12 +35,12 @@ export default {
   methods: {
     login () {
       console.log(this.username, this.password)
-      axios.post('http://127.0.0.1:8000/login/', {
+      BACKEND.post('login/', {
         username: this.username,
         password: this.password
       }).then(res => {
         let token = res.data.data.Authorization
-        console.log(token)
+        BACKEND.defaults.headers.common['Authorization'] = token
         window.localStorage.setItem('accessToken', token)
         this.$router.push('main')
       }).catch(e => {
