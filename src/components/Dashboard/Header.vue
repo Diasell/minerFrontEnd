@@ -25,6 +25,9 @@ export default {
       'firstname': 'Taras',
       'avatar': logo
     }
+  },
+  created () {
+    setTimeout(function () { alert('created') }, 1500)
   }
 }
 </script>
